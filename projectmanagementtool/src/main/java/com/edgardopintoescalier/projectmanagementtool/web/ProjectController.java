@@ -1,6 +1,7 @@
 package com.edgardopintoescalier.projectmanagementtool.web;
 
 import com.edgardopintoescalier.projectmanagementtool.domain.Project;
+import com.edgardopintoescalier.projectmanagementtool.services.MapValidationErrorService;
 import com.edgardopintoescalier.projectmanagementtool.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,21 +25,14 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
+    @Autowired
+    private MapValidationErrorService mapValidationErrorService;
+
     @PostMapping("")
     public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result) {
-        if(result.hasErrors()) {
-            // Here we get the error map
-            Map<String, String> errorMap = new HashMap<>();
 
-            // Extract field and message from the error
-            for(FieldError error: result.getFieldErrors()) {
-                errorMap.put(error.getField(), error.getDefaultMessage());
-            }
-
-            return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
-        }
-
-
+        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
+        if(errorMap !=null) return errorMap;
 
         Project project1 = projectService.saveOrUpdateProject(project);
         return new ResponseEntity<Project>(project, HttpStatus.CREATED);
