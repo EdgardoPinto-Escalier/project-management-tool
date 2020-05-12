@@ -1,9 +1,18 @@
+:root {
+  --red: #E53935;
+  --grey: #EEEEEE;
+  --purple: #7E57C2;
+  --green: #009688;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
 img {
   width: 100%;
 }
 
 a li {
-  color: #000;
+  color: var(--black);
 }
 
 a {
@@ -14,7 +23,7 @@ a {
 .list-group-item.update:hover,
 .list-group-item.board:hover {
   cursor: pointer;
-  background-color: #ccc;
+  background-color: var(--grey);
   
 }
 
@@ -65,4 +74,16 @@ a {
   margin-bottom: 5px;
   margin-right: 5px;
   color: #666;
+}
+
+.md-icon-board {
+  color: var(--purple);
+}
+
+.md-icon-update {
+  color: var(--green);
+}
+
+.md-icon-delete {
+  color: var(--red);
 }
