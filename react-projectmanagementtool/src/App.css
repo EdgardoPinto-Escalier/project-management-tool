@@ -1,6 +1,7 @@
 :root {
   --red: #E53935;
   --grey: #EEEEEE;
+  --dark-grey: #666666;
   --purple: #7E57C2;
   --green: #009688;
   --black: #000000;
@@ -66,14 +67,18 @@ a {
 .md-icon {
   vertical-align: middle;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.md-icon-delete, .md-icon-update, .md-icon-board {
+.md-icon-delete, 
+.md-icon-update, 
+.md-icon-board, 
+.md-icon-calender {
   font-size: 1.3rem;
   vertical-align: middle;
   margin-bottom: 5px;
   margin-right: 5px;
-  color: #666;
+  color: var(--dark-grey);
 }
 
 .md-icon-board {
@@ -82,8 +87,14 @@ a {
 
 .md-icon-update {
   color: var(--green);
+  font-weight: bold;
 }
 
 .md-icon-delete {
   color: var(--red);
+}
+
+.tag {
+  color: var(--green);
+  font-weight: bold;
 }

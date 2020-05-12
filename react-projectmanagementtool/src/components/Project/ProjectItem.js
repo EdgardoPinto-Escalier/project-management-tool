@@ -8,7 +8,7 @@ class ProjectItem extends Component {
         <div className="card card-body bg-light mb-3">
           <div className="row">
             <div className="col-2">
-              <span className="mx-auto">VUE JS</span>
+              <span className="mx-auto tag">VUE JS</span>
             </div>
             <div className="col-lg-6 col-md-4 col-8">
               <h3>VueJS - C# Project</h3>
