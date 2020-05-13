@@ -13,13 +13,13 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Project Name is required")
+    @NotBlank(message = "PROJECT NAME IS REQUIRED")
     private String projectName;
-    @NotBlank(message = "Project Identifier is required")
-    @Size(min=4, max=5, message = "Please use 4 to 5 characters")
+    @NotBlank(message = "PROJECT IDENTIFIER IS REQUIRED")
+    @Size(min=4, max=6, message = "PLEASE MAKE SURE THE UNIQUE PROJECT ID IS BETWEEN 4 TO 6 CHARACTERS LONG")
     @Column(updatable = false, unique = true)
     private String projectIdentifier;
-    @NotBlank(message = "Project Description is required")
+    @NotBlank(message = "PROJECT DESCRIPTION IS REQUIRED")
     private String description;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date start_date;
