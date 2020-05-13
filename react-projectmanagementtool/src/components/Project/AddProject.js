@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createProject } from '../../actions/projectActions';
 import { MdDateRange, MdBorderColor, MdSend } from "react-icons/md";
 
 class AddProject extends Component {
@@ -33,7 +36,7 @@ class AddProject extends Component {
       start_date: this.state.start_date,
       end_date: this.state.end_date
     };
-    console.log(newProject);
+    this.props.createProject(newProject, this.props.history)
   }
 
 
@@ -118,4 +121,8 @@ class AddProject extends Component {
   }
 }
 
-export default AddProject;
+AddProject.propTypes = {
+  createProject : PropTypes.func.isRequired
+}
+
+export default connect(null, {createProject})(AddProject);
