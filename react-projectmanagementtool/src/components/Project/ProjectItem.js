@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { MdAssignment, MdCached, MdDelete } from "react-icons/md";
 
 class ProjectItem extends Component {
@@ -22,11 +23,11 @@ class ProjectItem extends Component {
                     <MdAssignment className="md-icon-board pboard" /> PROJECT BOARD
                   </li>
                 </a>
-                <a href="#">
+                <Link to={`/updateProject/${project.projectIdentifier}`}>
                   <li className="list-group-item update">
                     <MdCached className="md-icon-update pupdate" /> UPDATE PROJECT INFO
                   </li>
-                </a>
+                </Link>
                 <a href="#">
                   <li className="list-group-item delete">
                     <MdDelete className="md-icon-delete pdelete" /> DELETE PROJECT
