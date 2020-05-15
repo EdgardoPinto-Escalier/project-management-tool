@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { deleteProject } from '../../actions/projectActions';
 import { MdAssignment, MdCached, MdDelete } from "react-icons/md";
 
 class ProjectItem extends Component {
+
+  onDeleteClick = id => {
+    this.props.deleteProject(id);
+  }
+
   render() {
     const { project } = this.props;
     return (
@@ -28,11 +36,11 @@ class ProjectItem extends Component {
                     <MdCached className="md-icon-update pupdate" /> UPDATE PROJECT INFO
                   </li>
                 </Link>
-                <a href="#">
-                  <li className="list-group-item delete">
+                
+                  <li className="list-group-item delete" onClick={this.onDeleteClick.bind(this, project.projectIdentifier)}>
                     <MdDelete className="md-icon-delete pdelete" /> DELETE PROJECT
                   </li>
-                </a>
+                
               </ul>
             </div>
           </div>
@@ -42,4 +50,8 @@ class ProjectItem extends Component {
   }
 }
 
-export default ProjectItem;
+ProjectItem.propTypes = {
+  deleteProject: PropTypes.func.isRequired
+};
+
+export default connect(null, {deleteProject})(ProjectItem);
