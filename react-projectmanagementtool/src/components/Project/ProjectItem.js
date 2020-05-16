@@ -28,21 +28,38 @@ class ProjectItem extends Component {
               <ul className="list-group">
                 <a href="#">
                   <li className="list-group-item board">
-                    <MdAssignment className="md-icon-board pboard" /> PROJECT BOARD
+                    <MdAssignment className="md-icon-board pboard" /> PROJECT
+                    BOARD
                   </li>
                 </a>
                 <Link to={`/updateProject/${project.projectIdentifier}`}>
                   <li className="list-group-item update">
-                    <MdCached className="md-icon-update pupdate" /> UPDATE PROJECT INFO
+                    <MdCached className="md-icon-update pupdate" /> UPDATE
+                    PROJECT INFO
                   </li>
                 </Link>
-                
-                  <li className="list-group-item delete" onClick={this.onDeleteClick.bind(this, project.projectIdentifier)}>
-                    <MdDelete className="md-icon-delete pdelete" /> DELETE PROJECT
-                  </li>
-                
+
+                <li
+                  className="list-group-item delete"
+                  onClick={this.onDeleteClick.bind(
+                    this,
+                    project.projectIdentifier
+                  )}
+                >
+                  <MdDelete className="md-icon-delete pdelete" /> DELETE PROJECT
+                </li>
               </ul>
             </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="mySmallModalLabel"
+        >
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">...</div>
           </div>
         </div>
       </div>
