@@ -18,6 +18,7 @@ export const createProject = (project, history) => async dispatch => {
   }
 };
 
+// Here we get all projects at once
 export const getProjects = () => async dispatch => {
   const res = await axios.get("/api/project/all-projects");
   dispatch({
@@ -26,6 +27,7 @@ export const getProjects = () => async dispatch => {
   });
 };
 
+// Here we get an speciphic project via the ID
 export const getProject = (id, history) => async dispatch => {
   try {
     const res = await axios.get(`/api/project/${id}`);
@@ -38,6 +40,7 @@ export const getProject = (id, history) => async dispatch => {
   }
 };
 
+// Here we delete a project via the ID
 export const deleteProject = id => async dispatch => {
   if(window.confirm("Are you sure you wish to delete this project?")) {
     await axios.delete(`/api/project/${id}`);
