@@ -14,8 +14,7 @@ public class Backlog {
     private Integer ProjectTaskSequence = 0;
     private String projectIdentifier;
 
-    public Backlog(Integer projectTaskSequence) {
-        ProjectTaskSequence = projectTaskSequence;
+    public Backlog() {
     }
 
     public Long getId() {
