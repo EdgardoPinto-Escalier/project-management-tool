@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 class Dashboard extends Component {
 
+  // Life cycle
   componentDidMount() {
     this.props.getProjects();
   }
