@@ -23,6 +23,7 @@ public class Backlog {
     public Backlog() {
     }
 
+    // Setters and Getters
     public Long getId() {
         return id;
     }

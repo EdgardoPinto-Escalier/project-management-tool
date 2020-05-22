@@ -29,6 +29,7 @@ public class ProjectTask {
     public ProjectTask() {
     }
 
+    // Setters and Getters
     public Long getId() {
         return id;
     }
