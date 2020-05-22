@@ -39,6 +39,7 @@ public class Project {
     public Project() {
     }
 
+    // Setters and Getters
     public Long getId() {
         return id;
     }
